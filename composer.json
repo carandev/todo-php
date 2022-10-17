@@ -1,0 +1,16 @@
+{
+    "name": "carandev/todo",
+    "description": "TODO written in PHP",
+    "autoload": {
+        "psr-4": {
+            "Carandev\\Todo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Gomez",
+            "email": "carlosandres0741@gmail.com"
+        }
+    ],
+    "require": {}
+}
