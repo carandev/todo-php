@@ -27,7 +27,9 @@ if (isset($_GET['delete'])) {
   <main class="h-full flex justify-center items-center flex-col p-8">
     <ul class="flex gap-8 flex-wrap">
       <?php
-      foreach ($todos as $todo) {
+      if ($todos) {
+        foreach ($todos as $todo) {
+
       ?>
         <li class="bg-slate-300 w-80 border hover:border-cyan-500 relative">
           <a href="?delete=<?php echo $todo->getUuid() ?>" class="flex items-center justify-center bg-red-500 rounded-full w-12 h-12 absolute -right-6 -top-6 text-slate-200">
@@ -45,10 +47,16 @@ if (isset($_GET['delete'])) {
             <p class="px-4"><?php echo $todo->getContent() ?></p>
           </a>
         </li>
-      <?php
-      }
+        <?php
+        }
+      } else {
+        ?>
+        </ul>
+        <p>There aren't todos</p>
+        <a class="bg-yellow-400 px-4 rounded m-4" href="?view=create">Create TODO</a>
+      <?php 
+        }
       ?>
-    </ul>
   </main>
 </body>
 
